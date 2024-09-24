@@ -1,0 +1,1 @@
+# plugins-wpop-elementor-addons
