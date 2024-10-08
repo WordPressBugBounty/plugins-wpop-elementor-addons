@@ -195,12 +195,6 @@ class Widget_Opstore_Header_Icons extends Widget_Base {
         }
         $align_items = $settings['align_items'];
         $show_price = $settings['show_price'];
-/*        $minicart_style = $settings['minicart_style'];
-        if($minicart_style == 'dropdown'){
-          $class= "on-hover";
-        }else{
-          $class = '';
-        }*/
 
         global $woocommerce;  
 

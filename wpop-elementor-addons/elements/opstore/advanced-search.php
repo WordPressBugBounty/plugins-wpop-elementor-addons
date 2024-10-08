@@ -184,10 +184,11 @@ class Widget_Opstore_Advanced_Search extends Widget_Base {
         // get our input from the widget settings.
         $settings = $this->get_settings();
 
-        $search_type = $settings['search_type'];
-        $show_category = $settings['show_category'];
-        $placeholder = $settings['placeholder'];
-        $submit_btn = $settings['show_submit_btn'];
+        $search_type    = $settings['search_type'];
+        $show_category  = $settings['show_category'];
+        $placeholder    = $settings['placeholder'];
+        $submit_btn     = $settings['show_submit_btn'];
+        
         if($search_type == 'ajax'){
             $class = 'ajax-search';
         }else{

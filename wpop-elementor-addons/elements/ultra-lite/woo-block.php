@@ -157,16 +157,16 @@ class Widget_Wpop_Woo_Block extends Widget_Base {
 
    protected function render( ) {
 
-	    // get our input from the widget settings.
-	    $settings = $this->get_settings();
-	    $header_text = $settings['header_text'];
-        $dtype = $settings['product_type'];
-        $per_page = $settings['per_page'];
-        $offset = $settings['offset'];
-        $cat_ids = $settings['category'];
+	   // get our input from the widget settings.
+	   $settings      = $this->get_settings();
+	   $header_text   = $settings['header_text'];
+      $dtype         = $settings['product_type'];
+      $per_page      = $settings['per_page'];
+      $offset        = $settings['offset'];
+      $cat_ids       = $settings['category'];
+      $meta_query    = WC()->query->get_meta_query();
+      $tax_query     = WC()->query->get_tax_query();
 
-        $meta_query = WC()->query->get_meta_query();
-        $tax_query = WC()->query->get_tax_query();
         if( $dtype== 'featured' ) {
            $tax_query[] = array(
               'taxonomy' => 'product_visibility',

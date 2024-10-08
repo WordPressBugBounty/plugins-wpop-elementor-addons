@@ -378,7 +378,7 @@ class Widget_Wpop_Single_Post extends Widget_Base {
 
         $settings   = $this->get_settings_for_display();
 
-        $this->add_render_attribute( 'wpop_single_post_attr', 'class', 'wpop-single-post wpop-single-post-style-'.$settings['post_style'] );
+        $this->add_render_attribute( 'wpop_single_post_attr', 'class', 'wpop-single-post wpop-single-post-style-'.esc_attr($settings['post_style']) );
 
 
         $get_post_name = $settings['post_name'];
@@ -415,7 +415,7 @@ class Widget_Wpop_Single_Post extends Widget_Base {
                         <?php endif; if( $settings['show_author'] == 'yes' || $settings['show_date'] == 'yes'):?>
                             <ul class="meta">
                                 <?php if( $settings['show_author'] == 'yes' ):?>
-                                    <li><i class="fa fa-user-circle"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author();?></a></li>
+                                    <li><i class="fa fa-user-circle"></i><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' )), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author();?></a></li>
                                 <?php endif; if($settings['show_date'] == 'yes' ):?>
                                     <li><i class="fa fa-clock-o"></i><?php the_time(esc_html__('d F Y','wpopea'));?></li>
                                 <?php endif; ?>

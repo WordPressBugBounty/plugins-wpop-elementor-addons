@@ -390,18 +390,16 @@ class Widget_Opstore_Product_Info extends Widget_Base {
 	protected function render( ) {
 		
 			
-		$settings = $this->get_settings();
-			
-		$product_count = $this->get_settings( 'opstore_product_info_products_count' );
-		$offset_val		= $this->get_settings( 'opstore_product_info_products_offset' );
-		$show_rating = $settings['opstore_product_info_rating'];
-		$p_type = $settings['product_type'];
-		$cat_ids = $settings['opstore_product_info_categories']; // get custom field value
-		$show_excerpt = $settings['opstore_show_excerpt'];
-		$excerpt = $settings['opstore_excerpt_length'];
-
-        $meta_query = WC()->query->get_meta_query();
-        $tax_query = WC()->query->get_tax_query();
+		$settings 			= $this->get_settings();
+		$product_count 	= $this->get_settings( 'opstore_product_info_products_count' );
+		$offset_val			= $this->get_settings( 'opstore_product_info_products_offset' );
+		$show_rating 		= $settings['opstore_product_info_rating'];
+		$p_type 				= $settings['product_type'];
+		$cat_ids 				= $settings['opstore_product_info_categories']; // get custom field value
+		$show_excerpt 	= $settings['opstore_show_excerpt'];
+		$excerpt 				= $settings['opstore_excerpt_length'];
+		$meta_query 		= WC()->query->get_meta_query();
+    $tax_query 			= WC()->query->get_tax_query();
 
         if( $p_type== 'featured' ) {
            $tax_query[] = array(

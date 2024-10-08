@@ -187,30 +187,28 @@ class Widget_Wpop_Grid_Block extends Widget_Base {
    protected function render( ) {
 
 	    // get our input from the widget settings.
-	    $settings = $this->get_settings();
-
-        $query_type = $settings['post_type'];
-        $per_page = $settings['per_page'];
-        $cat_id = !empty($settings['category']) ? $settings['category'] : null;
-        $offset = $settings['offset'];
-
-        $column = $settings['grid_columns'];
-        $show_excerpt = $settings['show_excerpt'];
-        $excerpt_length = $settings['excerpt_length'];
-        $readmore_text = $settings['readmore_text'];
-        $block_layout = $settings['block_layout'];
-        $cat_show = $settings['show_category'];
-        $show_meta = $settings['show_meta'];
-        $show_views = $settings['show_views'];
-        $show_comment = $settings['show_comment'];
+	    $settings       = $this->get_settings();
+      $query_type     = $settings['post_type'];
+      $per_page       = $settings['per_page'];
+      $cat_id         = !empty($settings['category']) ? $settings['category'] : null;
+      $offset         = $settings['offset'];
+      $column         = $settings['grid_columns'];
+      $show_excerpt   = $settings['show_excerpt'];
+      $excerpt_length = $settings['excerpt_length'];
+      $readmore_text  = $settings['readmore_text'];
+      $block_layout   = $settings['block_layout'];
+      $cat_show       = $settings['show_category'];
+      $show_meta      = $settings['show_meta'];
+      $show_views     = $settings['show_views'];
+      $show_comment   = $settings['show_comment'];
 
         ?>
 		<div class="ultra-block-wrapper grid-post-list <?php echo esc_attr( $block_layout.' col-'.esc_attr($column) );?>">
 		    <div class="grid-posts-wrap clearfix">
 		        <?php 
-            print_r($cat_id);
+            
 		        $block_args = ultra_seven_query_args( $query_type,$per_page,$cat_id,$offset );
-            //print_r($block_args);
+            
 		        $block_query = new \WP_Query( $block_args );             
 		        if( $block_query->have_posts() ) {
 		            while( $block_query->have_posts() ) {

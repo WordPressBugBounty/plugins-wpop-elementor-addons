@@ -314,14 +314,13 @@ class Widget_Wpop_Tab_Block extends Widget_Base {
 
    protected function render( ) {
 
-	    // get our input from the widget settings.
-	    $settings = $this->get_settings();
-    
-    $show_meta = $settings['show_meta'];
-		$no_of_item = $settings['posts_per_page'];
-		$recent_title = $settings['recent_tab_title'];
-		$popular_title = $settings['popular_tab_title'];
-		$comment_title = $settings['comment_tab_title'];
+	  // get our input from the widget settings.
+	  $settings       = $this->get_settings();
+    $show_meta      = $settings['show_meta'];
+		$no_of_item     = $settings['posts_per_page'];
+		$recent_title   = $settings['recent_tab_title'];
+		$popular_title  = $settings['popular_tab_title'];
+		$comment_title  = $settings['comment_tab_title'];
         
 
 		$args_latest = array(
@@ -393,20 +392,21 @@ class Widget_Wpop_Tab_Block extends Widget_Base {
     			<div id="widget-tab2-content-<?php echo esc_attr($uid);?>" class="tab-content" <?php if($recent_post != true) { echo 'style="display: block;"'; }?>>
     				<?php
     					$args_popular = array(
-    						'post_type' => 'post',
+    						'post_type'           => 'post',
     						'ignore_sticky_posts' => 1,
-    						'posts_per_page' => $no_of_item,
-    						'orderby' => 'comment_count'						
+    						'posts_per_page'      => $no_of_item,
+    						'orderby'             => 'comment_count'						
     					);	
     				?>
     				<?php $latest_posts = new \WP_Query( $args_popular ); ?>
     				<?php if ( $latest_posts -> have_posts() ) : ?>
     					<ul class="list post-list">
         					<?php while ( $latest_posts -> have_posts() ) : 
-        					    $latest_posts -> the_post(); $post_id = get_the_ID(); 
-	                            $image_id = get_post_thumbnail_id();
-	                            $image_path = wp_get_attachment_image_src( $image_id, 'ultra-small-image', true );
-	                            $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+        					    $latest_posts -> the_post();
+                      $post_id = get_the_ID(); 
+                      $image_id = get_post_thumbnail_id();
+                      $image_path = wp_get_attachment_image_src( $image_id, 'ultra-small-image', true );
+                      $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
         					    ?>					
         						<li class="content_out small-post clearfix">
                                     <div class="ultra-article-wrapper" itemscope itemtype="http://schema.org/Article">
@@ -435,50 +435,50 @@ class Widget_Wpop_Tab_Block extends Widget_Base {
     					<?php 
     						//get recent comments
     						$args = array(
-    							   'status' => 'approve',
+    							  'status' => 'approve',
     								'number' => $no_of_item
     							);	
     						$comments = get_comments($args);
     						
     						foreach($comments as $comment) :							
-    							$commentcontent = strip_tags($comment->comment_content);			
-                                $commentcontent = ultra_seven_get_excerpt_content( $commentcontent, 30 );
-    
-                                
-    							$commentauthor = $comment->comment_author;
-    							$commentauthor = ultra_seven_get_excerpt_content( $commentauthor, 30 );		
-    
-    							$commentid = $comment->comment_ID;
-    							$commenturl = get_comment_link($commentid); 
-                                
-                                $ultra_seven_postid = $comment->comment_post_ID;
-                                $title = get_the_title($ultra_seven_postid);
-                                $short_title = ultra_seven_get_excerpt_content( $title, 30 );
-    		                   ?>
-                                <li class="clearfix">
-                                    <div class="author-comment-wrap">
-                                        <div class="avatar thumb-zoom">
-                                			<?php echo get_avatar( $comment, '80' ); ?>
-                                		</div>
-                                        <div class="text-wrap">
-                                        <div class="cm-header">
-                                            <div class="author-name">
-                                                <?php echo esc_attr($commentauthor); ?>
-                                            </div>
-                                            <span>on</span>
-                                            <div class="date">
-                                                <?php echo (get_comment_date('', $commentid)); ?>
-                                            </div>
-                                        </div>
-                                        <h4 class="post-title">
-                                            <a href="<?php echo esc_url(get_permalink($ultra_seven_postid)) ?>"><?php echo esc_attr($short_title); ?></a>
-                                        </h4>   
-                                        <div class="comment-text">
-                                    		<a href="<?php echo esc_url($commenturl); ?>"><?php echo esc_attr($commentcontent); ?></a>
-                                    	</div>
-                                        </div> 
-                                    </div>
-                                </li>
+    							$commentcontent     = strip_tags($comment->comment_content);			
+                  $commentcontent     = ultra_seven_get_excerpt_content( $commentcontent, 30 );
+    							$commentauthor      = $comment->comment_author;
+    							$commentauthor      = ultra_seven_get_excerpt_content( $commentauthor, 30 );		
+    							$commentid          = $comment->comment_ID;
+    							$commenturl         = get_comment_link($commentid); 
+                  $ultra_seven_postid = $comment->comment_post_ID;
+                  $title              = get_the_title($ultra_seven_postid);
+                  $short_title        = ultra_seven_get_excerpt_content( $title, 30 );
+    		          ?>
+                  <li class="clearfix">
+                      <div class="author-comment-wrap">
+                          <div class="avatar thumb-zoom">
+                        <?php echo get_avatar( $comment, '80' ); ?>
+                      </div>
+                          <div class="text-wrap">
+                          <div class="cm-header">
+                              <div class="author-name">
+                                  <?php echo esc_html($commentauthor); ?>
+                              </div>
+                              <span>on</span>
+                              <div class="date">
+                                  <?php echo (get_comment_date('', $commentid)); ?>
+                              </div>
+                          </div>
+                          <h4 class="post-title">
+                              <a href="<?php echo esc_url(get_permalink($ultra_seven_postid)) ?>">
+                                <?php echo esc_html($short_title); ?>
+                              </a>
+                          </h4>   
+                          <div class="comment-text">
+                          <a href="<?php echo esc_url($commenturl); ?>">
+                            <?php echo esc_html($commentcontent); ?>
+                          </a>
+                        </div>
+                          </div> 
+                      </div>
+                  </li>
     				<?php endforeach; wp_reset_postdata();?>
     				</ul>
     			</div>

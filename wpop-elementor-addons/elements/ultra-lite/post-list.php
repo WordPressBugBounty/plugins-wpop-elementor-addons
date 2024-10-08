@@ -242,21 +242,19 @@ class Widget_Wpop_Post_List extends Widget_Base {
     protected function render( ) {
 
 	    // get our input from the widget settings.
-	    $settings = $this->get_settings();
-        
-        $query_type = $settings['post_type'];
-        $per_page = $settings['per_page'];
-        $cat_id = !empty($settings['category']) ? $settings['category'] : null;
-        $offset = $settings['offset']; 
-        $show_excerpt = $settings['show_excerpt'];
-        $excerpt_length = !empty($settings['excerpt_length']) ? $settings['excerpt_length'] : 100;
-        $readmore_text = $settings['readmore_text'];
-        $block_layout = $settings['block_layout'];
-
-        $cat_show = $settings['show_category'];
-        $show_meta = $settings['show_meta'];
-        $show_views = $settings['show_views'];
-        $show_comment = $settings['show_comment'];
+	    $settings       = $this->get_settings();  
+      $query_type     = $settings['post_type'];
+      $per_page       = $settings['per_page'];
+      $cat_id         = !empty($settings['category']) ? $settings['category'] : null;
+      $offset         = $settings['offset']; 
+      $show_excerpt   = $settings['show_excerpt'];
+      $excerpt_length = !empty($settings['excerpt_length']) ? $settings['excerpt_length'] : 100;
+      $readmore_text  = $settings['readmore_text'];
+      $block_layout   = $settings['block_layout'];
+      $cat_show       = $settings['show_category'];
+      $show_meta      = $settings['show_meta'];
+      $show_views     = $settings['show_views'];
+      $show_comment   = $settings['show_comment'];
 
         ?>
        <div class="widget_ultra_seven_posts_list">
@@ -264,7 +262,7 @@ class Widget_Wpop_Post_List extends Widget_Base {
             <div class="ultra-posts-wrap">
                 <?php 
                 $block_args = ultra_seven_query_args( $query_type,$per_page,$cat_id,$offset );
-                $paged=1;
+                $paged = 1;
                 $block_query = new \WP_Query( $block_args );
                 if( $block_query->have_posts() ) {
                     $count = 0;
@@ -273,13 +271,13 @@ class Widget_Wpop_Post_List extends Widget_Base {
                         $block_query->the_post();
                         $image_id = get_post_thumbnail_id();
                         if($block_layout=='layout-1' || ($block_layout=='layout-2' && $count==1)){
-                        $image_path = wp_get_attachment_image_src( $image_id, 'ultra-medium-image' );
-                        $class = 'post-large';
-                        $font = 'large-font';
+                          $image_path = wp_get_attachment_image_src( $image_id, 'ultra-medium-image' );
+                          $class = 'post-large';
+                          $font = 'large-font';
                         }else{
-                        $image_path = wp_get_attachment_image_src( $image_id, 'ultra-small-image', true );
-                        $class = '';
-                        $font = 'small-font';
+                          $image_path = wp_get_attachment_image_src( $image_id, 'ultra-small-image', true );
+                          $class = '';
+                          $font = 'small-font';
                         }
 
                         $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );

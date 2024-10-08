@@ -670,19 +670,19 @@ class Wpopea_Tiled_Posts extends Widget_Base {
         $this->add_render_attribute( 'tiled-posts', 'class', 'wpopea-tiled-posts clearfix' );
         
         if ( $settings['layout'] ) {
-            $this->add_render_attribute( 'tiled-posts', 'class', 'wpopea-tiled-posts-' . $settings['layout'] );
+            $this->add_render_attribute( 'tiled-posts', 'class', 'wpopea-tiled-posts-' . esc_attr($settings['layout']) );
         }
         
         $this->add_render_attribute( 'post-content', 'class', 'wpopea-tiled-post-content' );
         
         if ( $settings['content_vertical_position'] ) {
-            $this->add_render_attribute( 'post-content', 'class', 'wpopea-tiled-post-content-' . $settings['content_vertical_position'] );
+            $this->add_render_attribute( 'post-content', 'class', 'wpopea-tiled-post-content-' . esc_attr($settings['content_vertical_position']) );
         }
         
         $this->add_render_attribute( 'post-categories', 'class', 'wpopea-post-categories' );
         
         if ( $settings['category_style'] ) {
-            $this->add_render_attribute( 'post-categories', 'class', 'wpopea-post-categories-' . $settings['category_style'] );
+            $this->add_render_attribute( 'post-categories', 'class', 'wpopea-post-categories-' . esc_attr($settings['category_style']) );
         }
         ?>
         <div <?php echo $this->get_render_attribute_string( 'tiled-posts' ); ?>>

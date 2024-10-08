@@ -287,13 +287,13 @@ class Wpopea_Site_logo extends Widget_Base {
 
 		$animation_class = ! empty( $settings['hover_animation'] ) ? 'elementor-animation-' . $settings['hover_animation'] : '';
 
-		$html = sprintf( '<%1$s class="wpop-site-logo %2$s">', $settings['html_tag'], $animation_class );
+		$html = sprintf( '<%1$s class="wpop-site-logo %2$s">', esc_attr($settings['html_tag']), esc_attr($animation_class) );
 		if ( $link ) {
-			$html .= sprintf( '<a href="%1$s" %2$s>%3$s</a>', $link, $target, $logo );
+			$html .= sprintf( '<a href="%1$s" %2$s>%3$s</a>', esc_url($link), esc_attr($target), $logo );
 		} else {
 			$html .= $logo;
 		}
-		$html .= sprintf( '</%s>', $settings['html_tag'] );
+		$html .= sprintf( '</%s>', esc_html($settings['html_tag']) );
 
 		echo $html;
 	}

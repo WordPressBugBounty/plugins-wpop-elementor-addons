@@ -101,10 +101,11 @@ class Widget_Wpop_Block_Header extends Widget_Base {
 
     protected function render( ) {
 
-	    // get our input from the widget settings.
-	    $settings = $this->get_settings();
-        $header_text = $settings['wpop_header_text'];
-        $header_layout = $settings['header_layout'];
+	   // get our input from the widget settings.
+	   $settings      = $this->get_settings();
+      $header_text   = $settings['wpop_header_text'];
+      $header_layout = $settings['header_layout'];
+
         if($header_text){
         ?>
         <div class="ultra-block-wrapper">

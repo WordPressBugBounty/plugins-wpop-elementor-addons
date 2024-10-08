@@ -504,11 +504,11 @@ class Wpopea_Normal_Search extends Widget_Base {
 
         $settings   = $this->get_settings_for_display();
         $this->add_render_attribute( 'wpop_search_attr', 'class', 'wpop-search-box' );
-        $this->add_render_attribute( 'wpop_search_attr', 'class', 'wpop-search-style-'.$settings['search_style'] );
+        $this->add_render_attribute( 'wpop_search_attr', 'class', 'wpop-search-style-'.esc_attr($settings['search_style']) );
 
         $this->add_render_attribute(
             'input_attr', [
-                'placeholder' => $settings['inpur_placeholder'],
+                'placeholder' => esc_attr($settings['inpur_placeholder']),
                 'type' => 'text',
                 'name' => 's',
                 'title' => esc_html__( 'Search', 'wpopea' ),
@@ -530,9 +530,9 @@ class Wpopea_Normal_Search extends Widget_Base {
                                 
                                 <?php 
                                     if( $settings['search_btn_icon_type'] == 'icon' ) {
-                                        echo sprintf( '<button type="submit" class="btn-search search-trigger">%1$s %2$s</button>',Wpopea_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ),$settings['search_button_text'] );
+                                        echo sprintf( '<button type="submit" class="btn-search search-trigger">%1$s %2$s</button>',Wpopea_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ),esc_html($settings['search_button_text']) );
                                     }else{
-                                        echo sprintf( '<button type="submit" class="btn-search search-trigger">%1$s</button>', $settings['search_button_text'] );
+                                        echo sprintf( '<button type="submit" class="btn-search search-trigger">%1$s</button>', esc_html($settings['search_button_text']) );
                                     }
                                 ?>
 
@@ -543,9 +543,9 @@ class Wpopea_Normal_Search extends Widget_Base {
                                         <div class="action">
                                             <?php 
                                                 if( $settings['search_btn_icon_type'] == 'icon' ) {
-                                                    echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s %2$s</button>',Wpopea_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ),$settings['search_button_text'] );
+                                                    echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s %2$s</button>',Wpopea_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ),esc_html($settings['search_button_text']) );
                                                 }else{
-                                                    echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s</button>', $settings['search_button_text'] );
+                                                    echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s</button>', esc_html($settings['search_button_text']) );
                                                 }
                                             ?>
                                         </div>
@@ -562,9 +562,9 @@ class Wpopea_Normal_Search extends Widget_Base {
                         else{
                             echo '<input '.$this->get_render_attribute_string( 'input_attr' ).' >';
                             if( $settings['search_btn_icon_type'] == 'icon' ) {
-                                echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s %2$s</button>',Wpopea_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ),$settings['search_button_text'] );
+                                echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s %2$s</button>',Wpopea_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ),esc_html($settings['search_button_text']) );
                             }else{
-                                echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s</button>', $settings['search_button_text'] );
+                                echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s</button>', esc_html($settings['search_button_text']) );
                             }
                         }
                     ?>

@@ -3,9 +3,9 @@ Contributors: wpoperations
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.6
-Tested up to: 6.1
+Tested up to: 6.6.2
 Tags: elementor, woocommerce, ecommerce, opstore, arrival, ultra-lite
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 
 == Description ==
 This is a plugin for WPoperation WordPress Themes. The theme contains elements of elementor.
@@ -34,6 +34,10 @@ This plugin is addon for elementor, so elementor plugin must be installed and ac
 
 
 == Changelog ==
+
+= 1.1.9 =
+* Minor bugs fixed and improvements
+
 = 1.1.8 =
 *Fixed depreciated function issues for elementor
 *Compatibility test

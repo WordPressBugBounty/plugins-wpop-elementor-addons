@@ -245,20 +245,19 @@ class Widget_Wpop_Cat_Block extends Widget_Base {
    protected function render( ) {
 
 	    // get our input from the widget settings.
-	    $settings = $this->get_settings();
-      $query_type = $settings['post_type'];
-      $per_page = $settings['per_page'];
-      $cat_id = !empty($settings['category']) ? $settings['category'] : null;
-      $offset = $settings['offset']; 
-      $show_excerpt = $settings['show_excerpt'];
+	    $settings       = $this->get_settings();
+      $query_type     = $settings['post_type'];
+      $per_page       = $settings['per_page'];
+      $cat_id         = !empty($settings['category']) ? $settings['category'] : null;
+      $offset         = $settings['offset']; 
+      $show_excerpt   = $settings['show_excerpt'];
       $excerpt_length = !empty($settings['excerpt_length']) ? $settings['excerpt_length'] : 100;
-      $readmore_text = $settings['readmore_text'];
-
-      $block_layout = $settings['block_layout'];
-      $cat_show = $settings['show_category'];
-      $show_meta = $settings['show_meta'];
-      $show_views = $settings['show_views'];
-      $show_comment = $settings['show_comment'];
+      $readmore_text  = $settings['readmore_text'];
+      $block_layout   = $settings['block_layout'];
+      $cat_show       = $settings['show_category'];
+      $show_meta      = $settings['show_meta'];
+      $show_views     = $settings['show_views'];
+      $show_comment   = $settings['show_comment'];
 
         ?>
         <div class="ultra-block-wrapper single-cat1 <?php echo esc_attr($block_layout);?> clearfix">
@@ -274,17 +273,21 @@ class Widget_Wpop_Cat_Block extends Widget_Base {
                         $post_count++;
 
                         if( $post_count == 1 ) {
-                            $ultra_font_size = 'large-font';
-                            $image_size = 'ultra-medium-image';
+                            
+                            $ultra_font_size  = 'large-font';
+                            $image_size       = 'ultra-medium-image';
+
                             echo '<div class="left-post-wrapper clearfix wow fadeInDown" data-wow-duration="0.7s">';
                         } elseif( $post_count == 2 ) {
-                            $ultra_font_size = 'small-font';
-                            $image_size = 'ultra-small-image';
-                            $ultra_animate_class = 'fadeInUp';
+                            
+                            $ultra_font_size      = 'small-font';
+                            $image_size           = 'ultra-small-image';
+                            $ultra_animate_class  = 'fadeInUp';
+
                             echo '<div class="right-posts-wrapper clearfix wow fadeInUp" data-wow-duration="0.7s">';
                         } else {
-                            $ultra_font_size = 'small-font';
-                            $image_size = 'ultra-small-image';
+                            $ultra_font_size  = 'small-font';
+                            $image_size       = 'ultra-small-image';
                         }
                         ?>
                         <div class="single-post clearfix">

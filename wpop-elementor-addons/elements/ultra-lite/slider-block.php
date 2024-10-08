@@ -197,16 +197,14 @@ class Widget_Ultra_Slider_Block extends Widget_Base {
 
 	protected function render( ) {
 
-	    // get our input from the widget settings.
-		$settings = $this->get_settings();
-
-		$ultra_slider_type = $settings['post_type'];
-		$ultra_slider_per_page = $settings['per_page'];
-		$ultra_cat_slider = !empty($settings['category']) ? $settings['category'] : null;
-		$ultra_slider_offset = $settings['offset'];
-
-		$cat_show = $settings['show_category'];
-		$show_meta = $settings['show_meta'];
+	  // get our input from the widget settings.
+		$settings 							= $this->get_settings();
+		$ultra_slider_type 			= $settings['post_type'];
+		$ultra_slider_per_page 	= $settings['per_page'];
+		$ultra_cat_slider 			= !empty($settings['category']) ? $settings['category'] : null;
+		$ultra_slider_offset 		= $settings['offset'];
+		$cat_show 							= $settings['show_category'];
+		$show_meta 							= $settings['show_meta'];
 
 		?>
 

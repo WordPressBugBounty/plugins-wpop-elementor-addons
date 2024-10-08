@@ -1434,15 +1434,6 @@ class Wpopea_Advanced_Menu extends Widget_Base {
 			'breakpoint'	=> $settings['dropdown'],
 		);
 
-/*		$args = [
-			'echo' => false,
-			'menu' => $settings['menu'],
-			'menu_class' => 'wpopea-advanced-menu',
-			//'menu_id' => 'menu-' . $this->get_nav_menu_index() . '-' . $this->get_id(),
-			'fallback_cb' => '__return_empty_string',
-			'container' => '',
-		];*/
-
         $args = apply_filters( 'opal_nav_menu_args',[
             'echo'        => false,
             'menu'        => $settings['menu'],
@@ -1492,12 +1483,6 @@ class Wpopea_Advanced_Menu extends Widget_Base {
         }
 
 		$this->add_render_attribute( 'menu-toggle', 'class', $menu_toggle_classes);
-
-		// if ( Plugin::elementor()->editor->is_edit_mode() ) {
-		// 	$this->add_render_attribute( 'menu-toggle', [
-		// 		'class' => 'wpopea-clickable',
-		// 	] );
-		// }
 
 		$menu_wrapper_classes = 'wpopea-advanced-menu__align-' . $settings['align_items'];
 		$menu_wrapper_classes .= ' wpopea-advanced-menu--indicator-' . $settings['indicator'];

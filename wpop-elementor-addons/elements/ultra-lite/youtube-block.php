@@ -124,9 +124,9 @@ class Widget_Wpop_Youtube_Block extends Widget_Base {
 
    protected function render( ) {
 
-	    // get our input from the widget settings.
-	    $settings = $this->get_settings();
-        $ultra_seven_videos_ids = $settings['video_ids'];
+	   // get our input from the widget settings.
+	   $settings               = $this->get_settings();
+      $ultra_seven_videos_ids = $settings['video_ids'];
 
         ?>
         <div class="ultra-block-wrapper youtube-video">

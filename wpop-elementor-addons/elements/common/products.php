@@ -553,16 +553,16 @@ class Widget_Opstore_Products extends Widget_Base {
 
         $this->add_render_attribute( 'opstore-products', 'class', 'wpopea-opstore-products type-'.$display_type.' column-'.$columns );
         if($display_type === 'carousel'){
-          $this->add_render_attribute( 'opstore-products', 'data-slide-no', $slide_no );
-          $this->add_render_attribute( 'opstore-products', 'data-tslide-no', $tslide_no );
-          $this->add_render_attribute( 'opstore-products', 'data-mslide-no', $mslide_no );
-          $this->add_render_attribute( 'opstore-products', 'data-slide-item', $slide_item );
-          $this->add_render_attribute( 'opstore-products', 'data-tslide-item', $tslide_item );
-          $this->add_render_attribute( 'opstore-products', 'data-mslide-item', $mslide_item );
-          $this->add_render_attribute( 'opstore-products', 'data-auto-slide', $auto_slide );
-          $this->add_render_attribute( 'opstore-products', 'data-show-pager', $show_pager );
-          $this->add_render_attribute( 'opstore-products', 'data-show-arrow', $show_arrow );
-          $this->add_render_attribute( 'opstore-products', 'data-infinite-slide', $infinite_slide );
+          $this->add_render_attribute( 'opstore-products', 'data-slide-no', esc_attr($slide_no));
+          $this->add_render_attribute( 'opstore-products', 'data-tslide-no', esc_attr($tslide_no));
+          $this->add_render_attribute( 'opstore-products', 'data-mslide-no', esc_attr($mslide_no));
+          $this->add_render_attribute( 'opstore-products', 'data-slide-item', esc_attr($slide_item));
+          $this->add_render_attribute( 'opstore-products', 'data-tslide-item', esc_attr($tslide_item));
+          $this->add_render_attribute( 'opstore-products', 'data-mslide-item', esc_attr($mslide_item));
+          $this->add_render_attribute( 'opstore-products', 'data-auto-slide', esc_attr($auto_slide));
+          $this->add_render_attribute( 'opstore-products', 'data-show-pager', esc_attr($show_pager));
+          $this->add_render_attribute( 'opstore-products', 'data-show-arrow', esc_attr($show_arrow));
+          $this->add_render_attribute( 'opstore-products', 'data-infinite-slide', esc_attr($infinite_slide ));
         }
         $woocommerce_loop['name'] = 'opstore_products';
         $meta_query = WC()->query->get_meta_query();
@@ -638,7 +638,7 @@ class Widget_Opstore_Products extends Widget_Base {
               </div>
               <?php
             }
-           echo '<div id="'.$uniqueid.'" class="opstore-wc-products opstore-wc-column-'.$columns.'">';
+           echo '<div id="'.esc_attr($uniqueid).'" class="opstore-wc-products opstore-wc-column-'.esc_attr($columns).'">';
               ?>
               <ul class="products <?php echo esc_attr($extra_class)?>" >
               <?php

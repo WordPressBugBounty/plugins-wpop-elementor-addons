@@ -831,19 +831,19 @@ class Wpop_News_Ticker extends Widget_Base {
 
         $this->add_render_attribute( 'ticker', 'class', 'wpopea-ticker' );
         //slider attrs
-        $this->add_render_attribute( 'ticker', 'data-slide-no', $slide_no );
-        $this->add_render_attribute( 'ticker', 'data-tslide-no', $tslide_no );
-        $this->add_render_attribute( 'ticker', 'data-mslide-no', $mslide_no );
-        $this->add_render_attribute( 'ticker', 'data-slide-item', $slide_item );
-        $this->add_render_attribute( 'ticker', 'data-tslide-item', $tslide_item );
-        $this->add_render_attribute( 'ticker', 'data-mslide-item', $mslide_item );
-        $this->add_render_attribute( 'ticker', 'data-auto-slide', $auto_slide );
-        $this->add_render_attribute( 'ticker', 'data-speed', $slide_speed );
-        $this->add_render_attribute( 'ticker', 'data-show-arrow', $show_arrow );
-        $this->add_render_attribute( 'ticker', 'data-slide-type', $slide_type );
-        $this->add_render_attribute( 'ticker', 'data-rtl', $rtl );
-        $this->add_render_attribute( 'ticker', 'data-scroll', $scroll );
-        $this->add_render_attribute( 'ticker', 'data-infinite-slide', $infinite_slide );
+        $this->add_render_attribute( 'ticker', 'data-slide-no', esc_attr($slide_no) );
+        $this->add_render_attribute( 'ticker', 'data-tslide-no', esc_attr($tslide_no) );
+        $this->add_render_attribute( 'ticker', 'data-mslide-no', esc_attr($mslide_no) );
+        $this->add_render_attribute( 'ticker', 'data-slide-item', esc_attr($slide_item) );
+        $this->add_render_attribute( 'ticker', 'data-tslide-item', esc_attr($tslide_item) );
+        $this->add_render_attribute( 'ticker', 'data-mslide-item', esc_attr($mslide_item) );
+        $this->add_render_attribute( 'ticker', 'data-auto-slide', esc_attr($auto_slide) );
+        $this->add_render_attribute( 'ticker', 'data-speed', esc_attr($slide_speed) );
+        $this->add_render_attribute( 'ticker', 'data-show-arrow', esc_attr($show_arrow) );
+        $this->add_render_attribute( 'ticker', 'data-slide-type', esc_attr($slide_type) );
+        $this->add_render_attribute( 'ticker', 'data-rtl', esc_attr($rtl) );
+        $this->add_render_attribute( 'ticker', 'data-scroll', esc_attr($scroll) );
+        $this->add_render_attribute( 'ticker', 'data-infinite-slide', esc_attr($infinite_slide) );
 
         if(!$settings['show_indicator']){
             $class = 'indicator-off';

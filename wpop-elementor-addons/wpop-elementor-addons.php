@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
  * Plugin Name:       WPOP Elementor Addons
  * Plugin URI:        https://wpoperation.com/plugins
  * Description:       This is Elementor addons for WPoperation Themes.
- * Version:           1.1.8
+ * Version:           1.1.9
  * Author:            WPoperation
  * Author URI:        https://wpoperation.com
  * License:           GPL-2.0+
@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 
 
 /** Necessary Constants **/
-defined( 'WPOPEA_VERSION' ) or define( 'WPOPEA_VERSION', '1.1.8' ); //plugin version
+defined( 'WPOPEA_VERSION' ) or define( 'WPOPEA_VERSION', '1.1.9' ); //plugin version
 defined( 'WPOPEA_TD' ) or define( 'WPOPEA_TD', 'wpopea' ); //plugin's text domain
 defined( 'WPOPEA_PATH' ) or define( 'WPOPEA_PATH', plugin_dir_path( __FILE__ ) );
 defined( 'WPOPEA_ASSETS' ) or define( 'WPOPEA_ASSETS', plugin_dir_url(__FILE__).'assets/' );
@@ -56,11 +56,11 @@ if(!class_exists('Wpop_El_Addons')) :
 
 	
 		function wpopea_elements_register(){
-            require_once WPOPEA_PATH.'elements/common/site-logo.php';
-            require_once WPOPEA_PATH.'elements/common/advanced-menu.php';
-            require_once WPOPEA_PATH.'elements/common/header-icons.php';
-            require_once WPOPEA_PATH.'elements/common/normal-search.php';
-            require_once WPOPEA_PATH.'elements/common/news-ticker.php';
+			require_once WPOPEA_PATH.'elements/common/site-logo.php';
+			require_once WPOPEA_PATH.'elements/common/advanced-menu.php';
+			require_once WPOPEA_PATH.'elements/common/header-icons.php';
+			require_once WPOPEA_PATH.'elements/common/normal-search.php';
+			require_once WPOPEA_PATH.'elements/common/news-ticker.php';
 			require_once WPOPEA_PATH.'elements/common/blog.php';
 			require_once WPOPEA_PATH.'elements/common/tiled-posts.php';
 			require_once WPOPEA_PATH.'elements/common/single-post.php';

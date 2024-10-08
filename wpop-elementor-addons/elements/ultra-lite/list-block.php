@@ -247,20 +247,19 @@ class Widget_Wpop_List_Block extends Widget_Base {
    protected function render( ) {
 
 	   // get our input from the widget settings.
-	   $settings = $this->get_settings();
-      $query_type = $settings['post_type'];
-      $per_page = $settings['per_page'];
-      $cat_id = !empty($settings['category']) ? $settings['category'] : null;
-      $offset = $settings['offset']; 
-
-      $show_excerpt = $settings['show_excerpt'];
-      $excerpt_length = $settings['excerpt_length'];
-      $readmore_text = $settings['readmore_text'];
-      $block_layout = $settings['block_layout'];
-      $cat_show = $settings['show_category'];
-      $show_meta = $settings['show_meta'];
-      $show_views = $settings['show_views'];
-      $show_comment = $settings['show_comment'];
+    $settings       = $this->get_settings();
+    $query_type     = $settings['post_type'];
+    $per_page       = $settings['per_page'];
+    $cat_id         = !empty($settings['category']) ? $settings['category'] : null;
+    $offset         = $settings['offset']; 
+    $show_excerpt   = $settings['show_excerpt'];
+    $excerpt_length = $settings['excerpt_length'];
+    $readmore_text  = $settings['readmore_text'];
+    $block_layout   = $settings['block_layout'];
+    $cat_show       = $settings['show_category'];
+    $show_meta      = $settings['show_meta'];
+    $show_views     = $settings['show_views'];
+    $show_comment   = $settings['show_comment'];
 
       ?>
 		<div class="ultra-block-wrapper latest-posts <?php echo esc_attr($block_layout);?>">
@@ -274,13 +273,13 @@ class Widget_Wpop_List_Block extends Widget_Base {
                  $count++;
                  $block_query->the_post();
                  if( ($block_layout=='layout-1' && $count==1) || ($block_layout=='layout-2' && $count==1) ){
-                 $image_size = 'ultra-xlarge-image';
-                 $large_class='single-post-large';
-                 $font_class = 'large-font';
+                 $image_size  = 'ultra-xlarge-image';
+                 $large_class ='single-post-large';
+                 $font_class  = 'large-font';
                  }else{
-                 $image_size = 'ultra-slider1-right';
+                 $image_size  = 'ultra-slider1-right';
                  $large_class = 'single-post';
-                 $font_class = 'small-font';
+                 $font_class  = 'small-font';
                  }
 
                  if($count%2==0 && $block_layout=='layout-2'){

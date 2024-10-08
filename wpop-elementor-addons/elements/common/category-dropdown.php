@@ -469,9 +469,9 @@ class Wpopea_Category_Dropdown extends Widget_Base {
           }else{
             $class = '';
           }
-          echo '<li class="cats '.$class.'"><a href="'.get_term_link($parent_product_cat->term_id).'">';
+          echo '<li class="cats '.esc_attr($class).'"><a href="'.esc_url(get_term_link($parent_product_cat->term_id)).'">';
           if($thumbnail_id && $show_cat_image == 'yes'){
-            echo "<img src='{$cat_image}' height='20px' width='20px'/>";
+            echo '<img src="'.esc_url($cat_image).'" height="20px" width="20px"/>';
           }
           echo esc_html($parent_product_cat->name);
           echo '</a>';
@@ -496,7 +496,7 @@ class Wpopea_Category_Dropdown extends Widget_Base {
               }
               echo '<li class="sub-cats '.$class.'"><a href="'.get_term_link($child_product_cat->term_id).'">';
               if($thumbnail_id && $show_cat_image == 'yes'){
-                echo "<img src='{$cat_image}' height='20px' width='20px'/>";
+                echo '<img src="'.esc_url($cat_image).'" height="20px" width="20px"/>';
               }
               echo esc_html($child_product_cat->name);
               echo '</a></li>';
